@@ -1,6 +1,4 @@
 import socket
-import colorama
-
 class Banner:
     def __init__(self,host,port):
         self.host = host
@@ -9,11 +7,14 @@ class Banner:
     def _get_Banner(self):
         try:
             self.sock.connect((self.host,self.port))
-            data = self.sock.recv(1024)
-            print(data.decode())
-        except:
-            print("Connection is Not happen")
-    
-obj = Banner('34.111.55.4',443)._get_Banner()
+            if(self.port == 80 or 8080):
+                self.sock.sendall(b"HEAD / HTTP/1.1\r\nHost: %b\r\n\r\n" % self.host.encode())
+            try:
+                data = self.sock.recv(1024)
+                return data.decode().strip()
+            except ():
+                return "No Banner Available"
+            
+        except():
+            return "Port is not Open"
 
-HEAD / HTTP/1.0
