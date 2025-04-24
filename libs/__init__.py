@@ -12,9 +12,9 @@ class Banner:
             try:
                 data = self.sock.recv(1024)
                 return data.decode().strip()
-            except ():
-                return "No Banner Available"
+            except:
+                return "no Banner Available"
             
-        except():
-            return "Port is not Open"
+        except:
+            return "port are not open"
 
