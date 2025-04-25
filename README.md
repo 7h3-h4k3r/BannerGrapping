@@ -1,7 +1,7 @@
+
 <p align="center">
   <img src="https://github.com/7h3-h4k3r/P067sc4NN36/blob/main/image/logo.png" alt="Banner Grabbing Tool" width="600"/>
 </p>
----
 
 ```markdown
 # 🛰️ BannerGrabbing Tool
@@ -77,5 +77,3 @@ This tool is intended **only for educational and authorized penetration testing*
 - **Model:** Banner Grabbing Tool
 
 ---
-
-```
