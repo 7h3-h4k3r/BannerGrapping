@@ -1,13 +1,15 @@
-from __init__ import Banner
+from libs.__init__ import Banner
 import argparse
 import os
+from colorama import Fore ,Style
 class output:
     def __init__(self):
         self.__asciiArt()
         self.parser = argparse.ArgumentParser(description="Banner Grapping Tool")
         self._argscheck()
     def __asciiArt(self):
-        ascii_art = r"""
+        ascii_art = Fore.MAGENTA+r"""
+
        _          (`-. 
        \`----.    ) ^_`)
 ,__     \__   `\_/  ( `
@@ -16,7 +18,7 @@ class output:
      ))/   \__,<  /_/    Version : 0.1
      ((|  _/_/ `\ \_\_   Model : Banner Grapping Tool 
       `\_____\  )__\"
-      """
+      """ + Style.RESET_ALL
         print(ascii_art)
     def _argscheck(self):
         self.parser.add_argument("--ip", required=True,help="Give a Target IP or Domain ")
@@ -28,8 +30,8 @@ class output:
     def _bannerAbout(self,msg,ip,port): 
         os.system('cls' if os.name == 'nt' else 'clear')
         self.__asciiArt()
-        print(f"Host of Target : {ip}\nPort of Target :{port}\nBanner of Target : {msg}\n\n \t\t Analysis Finished")
+        print(f"{Fore.RED}Host of Target : {ip} {Style.RESET_ALL}\n{Fore.WHITE}Port of Target : {port}{Style.RESET_ALL}\nBanner of Target : {Fore.GREEN}{msg}{Style.RESET_ALL}\n\n \t\t Analysis Finished")
+{}
+        
+        
 
-        
-        
-ban = output()
